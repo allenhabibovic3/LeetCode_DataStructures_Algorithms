@@ -2,6 +2,7 @@
 //picks a pivot element such that all elements to the left of pivot are lesser, and to the right are greater than pivot
 //in place sorting algorithm
 //worst case is if arrays are already sorted, can be avoided by randomly picking the pivot point
+//W(n) = O(n^2)
 
 public class NQueens {
 	//utility function to print an array
