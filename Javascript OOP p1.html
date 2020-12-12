@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Javascript TRAVESTY MEDIA</title>
+
+	<style type="text/css">
+
+	</style>
+
+</head>
+<body>
+	<header>
+		
+	</header>
+
+	<script type="text/javascript">
+		
+
+		//constructor in javascript avoid class?
+		function Circle(radius, color) {
+			this.radius = radius;
+			this.color = color;
+			this.draw = function() {
+				console.log(`radius: ${this.radius}, color: ${this.color}`);
+			}
+		}
+
+		let C1 = new Circle(2, "red");
+		C1.draw();
+    
+    //constructor functions(object creators) begin with an uppercase letter, use this instead of creating classes to instantiate new objects of type Class
+		function Person(first_name, last_name, age){
+			this.first_name = first_name;
+			this.last_name = last_name;
+			this.age = age;
+
+			this.displayName = function() {
+				console.log(`full name: ${this.first_name} ${this.last_name}`);
+			}
+		};
+
+		let P1 = new Person("Allen", "Habibovic", 23);
+		P1.displayName();
+
+		let dobProperty = 'dob';
+		P1[dobProperty] = new Date('2020-11-10').getFullYear();
+		console.log(P1[dobProperty]);
+
+		delete P1[dobProperty];
+		console.log(P1[dobProperty]);
+
+    //enumerate through the P1 object, log the key: value pairs to console
+		for(let key in P1){
+			console.log(`key:${key}, value:${P1[key]}`);
+		}
+	</script>
+</body>
+</html>
