@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Javascript Higher Order Functions and Arrays</title>
+</head>
+<body>
+  <h1>JS Array Method</h1>
+
+  <script type="text/javascript">
+    
+    const companies = [
+      {name: "Company1", category: "finance", start: 1981, end: 1988},
+      {name: "Company2", category: "auto", start: 1981, end: 2003},
+      {name: "Company3", category: "retil", start: 1991, end: 2003},
+      {name: "Company4", category: "fnce", start: 1991, end: 1993},
+      {name: "Company5", category: "retail", start: 1971, end: 1977},
+      {name: "Company6", category: "inae", start: 1961, end: 2003},
+      {name: "Company7", category: "retail", start: 1981, end: 2003},
+      {name: "Company8", category: "finae", start: 1989, end: 2003},
+    ];
+
+    const ages = [22, 30, 11, 3, 5, 7, 9, 34, 23, 10];
+
+    //foreach() use for looping
+    /*companies.forEach(function(company, index) {
+      console.log(`${company.name} -> total years: ${company.end-company.start}`);
+    });*/
+
+    /*for(let i = 0; i < ages.length; i++) {
+      if(ages[i] >= 21){
+        canDrink.push(ages[i]);
+      }
+    }
+
+    canDrink.forEach(function(age) {
+      console.log(age);
+    })*/
+
+    //filter method
+    /*let canDrink = ages.filter(function(age) {
+      if(age >= 21){
+        return true;
+      }
+    });*/
+
+    //use ES6 arrow functions to simplify down to one line
+    /*let canDrink = ages.filter(age => age >= 21);
+
+    console.log(canDrink);*/
+
+    //filter the retail companies 
+    /*let new_companies = companies.filter(function(company) {
+      if(company.category.toLowerCase() == 'retail'){
+        return company.name;
+      }
+    });*/
+
+    /*new_companies.forEach(function(company) {
+      console.log(company.name);
+    });*/
+
+    //do this in one line es6 arrow functions
+    /*let retailCompanies = companies.filter(company => company.category === 'retail');
+
+    console.log(retailCompanies);*/
+
+    //get all companies that started strictly in the 80's
+    /*let new_company = companies.filter(function(company) {
+      if(1980 <= company.start && company.start <= 1989) {
+        return true;
+      }
+    });*/
+
+    /*let new_company = companies.filter(company => 1980 <= company.start && company.start <= 1989);
+    console.log(new_company);*/
+
+    //get the companies that lasted 10 or more years
+
+    /*let new_companies = companies.filter(company => (company.end - company.start) >= 10);
+
+    console.log(new_companies);*/
+
+    //using map() runs a func map your data to a function 
+    /*let testMap = companies.map(function(company) {
+      return `${company.name}, [${company.start} -> ${company.end}]`;
+    });
+
+    console.log(testMap);*/
+
+    /*ages.forEach(function(age) {
+      console.log(Math.sqrt(age));
+    })*/
+
+    /*let u = [1,2,3];
+    let v = [2,3,4];
+
+    let sum = 0;
+    for(let i = 0; i < u.length; i++) {
+      sum += u[i] * v[i];
+    }
+
+    console.log(sum); 
+*/
+    /*let randomMap = ages.map(age => Math.sqrt(age));
+    console.log(randomMap);*/
+
+    /*let randomMap = ages.map(age => Math.sqrt(age)).filter(age => age > 4.0);
+    console.log(randomMap);*/
+
+    /*let sortedCompanies = companies.sort(function(c1, c2) {
+      if(c1.end > c2.end){
+        return 1;
+      }else {
+        return -1;
+      }
+    });*/
+
+    //condense into one line
+    /*let sortedCompanies = companies.sort((a, b) => (a.start > b.start) ? 1 : -1);
+
+    console.log(sortedCompanies);
+
+    let sortedAges2 = ages.sort((a, b) => a - b); //ascending
+    console.log(sortedAges2);*/
+
+    /*let sum = 0;
+
+    for(let i = 0; i < ages.length; i++) {
+      sum += ages[i];
+    }
+
+    console.log(sum);*/
+
+    
+
+    let t = ages.findIndex(22);
+    console.log(t);
+
+  </script>
+</body>
+</html>
